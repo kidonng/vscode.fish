@@ -8,21 +8,21 @@ function __vsc_command_complete -e fish_postexec
     __vsc_update_cwd
 end
 
-functions -q _vsc_fish_prompt && exit
-functions -c fish_prompt _vsc_fish_prompt
+functions -q __vsc_fish_prompt && exit
+functions -c fish_prompt __vsc_fish_prompt
 
 function fish_prompt
     __vsc_prompt_start
-    _vsc_fish_prompt
+    __vsc_fish_prompt
     __vsc_prompt_end
 end
 
 if functions -q fish_right_prompt
-    functions -c fish_right_prompt _vsc_fish_right_prompt
+    functions -c fish_right_prompt __vsc_fish_right_prompt
 
     function fish_right_prompt
         __vsc_right_prompt_start
-        _vsc_fish_right_prompt
+        __vsc_fish_right_prompt
         __vsc_right_prompt_end
     end
 end
