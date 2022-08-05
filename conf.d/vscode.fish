@@ -1,7 +1,11 @@
+if ! status -i || test "$TERM_PROGRAM" != vscode || test -n "$VSCODE_SHELL_INTEGRATION"
+    exit
+end
+
+set -g VSCODE_SHELL_INTEGRATION 1
+
 function __vsc_initialize -e fish_prompt
     functions -e __vsc_initialize
-    test -n "$VSCODE_SHELL_INTEGRATION" && exit
-    set -g VSCODE_SHELL_INTEGRATION 1
 
     function __vsc_command_output_start -e fish_preexec
         printf "\033]633;C\007"
