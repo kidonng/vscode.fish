@@ -2,7 +2,7 @@
 
 > **Note**: this is a work in progress!
 
-[Fish](https://fishshell.com/) port of Visual Studio Code's [Terminal Shell Integration](https://code.visualstudio.com/docs/terminal/shell-integration) ([`shellIntegration-bash.sh`](https://github.com/microsoft/vscode/blob/main/src/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh)).
+[Fish](https://fishshell.com/) port of Visual Studio Code's [Terminal Shell Integration](https://code.visualstudio.com/docs/terminal/shell-integration) ([`shellIntegration-rc.zsh`](https://github.com/microsoft/vscode/blob/main/src/vs/workbench/contrib/terminal/browser/media/shellIntegration-rc.zsh)).
 
 ![Screenshot](screenshot.png)
 
