@@ -8,6 +8,7 @@ function __vsc_command_complete -e fish_postexec
     __vsc_update_cwd
 end
 
+functions -q _vsc_fish_prompt && exit
 functions -c fish_prompt _vsc_fish_prompt
 
 function fish_prompt
