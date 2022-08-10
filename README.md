@@ -1,6 +1,6 @@
 # 🆚🐟 vscode.fish
 
-[Fish](https://fishshell.com/) port of Visual Studio Code's [Terminal Shell Integration](https://code.visualstudio.com/docs/terminal/shell-integration) ([`shellIntegration-rc.zsh`](https://github.com/microsoft/vscode/blob/main/src/vs/workbench/contrib/terminal/browser/media/shellIntegration-rc.zsh)).
+[Fish](https://fishshell.com/) plugin to add support for Visual Studio Code's [Terminal Shell Integration](https://code.visualstudio.com/docs/terminal/shell-integration).
 
 ![Screenshot](screenshot.png)
 

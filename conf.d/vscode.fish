@@ -23,6 +23,9 @@ function __vsc_initialize -e fish_prompt
 
     function __vsc_command_complete -e fish_postexec
         printf "\e]633;D;$status\a"
+    end
+
+    function __vsc_update_cwd -v PWD
         printf "\e]633;P;Cwd=$PWD\a"
     end
 
