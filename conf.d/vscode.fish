@@ -13,19 +13,19 @@ function __vsc_initialize -e fish_prompt
         string match -q -- " *" $argv && return
 
         printf "\e]633;C\a"
-        printf "\e]633;E;%s\a" "$argv"
+        printf "\e]633;E;$argv\a"
     end
 
     function __vsc_command_complete -e fish_postexec
-        printf "\e]633;D;%s\a" $status
-        __vsc_update_cwd
+        printf "\e]633;D;$status\a"
+        printf "\e]633;P;Cwd=$PWD\a"
     end
 
     functions -c fish_prompt __vsc_fish_prompt
 
     function fish_prompt
-        __vsc_prompt_start
+        printf "\e]633;A\a"
         __vsc_fish_prompt
-        __vsc_prompt_end
+        printf "\e]633;B\a"
     end
 end
