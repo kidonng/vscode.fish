@@ -19,14 +19,30 @@ function __vsc_initialize -e fish_prompt
             string replace -a ";" "\x3b" |
             string join "\x0a"
         )
+
+        set -g _vsc_has_command
     end
 
     function __vsc_command_complete -e fish_postexec
         printf "\e]633;D;$status\a"
     end
 
+    function __vsc_command_cancel -e fish_cancel
+        printf "\e]633;E\a"
+        printf "\e]633;D\a"
+    end
+
     function __vsc_update_cwd -v PWD
         printf "\e]633;P;Cwd=$PWD\a"
+    end
+
+    function __vsc_check_command -e fish_prompt
+        if set -q _vsc_has_command
+            set -e _vsc_has_command
+        else
+            # Empty command, trigger cancel event
+            __vsc_command_cancel
+        end
     end
 
     functions -c fish_prompt __vsc_fish_prompt
