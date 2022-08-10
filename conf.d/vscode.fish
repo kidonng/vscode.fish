@@ -8,6 +8,10 @@ function __vsc_initialize -e fish_prompt
     functions -e __vsc_initialize
 
     function __vsc_command_output_start -e fish_preexec
+        # Ignore commands with leading space
+        # https://fishshell.com/docs/current/interactive.html#searchable-command-history
+        string match -q -- " *" $argv && return
+
         printf "\e]633;C\007"
         printf "\e]633;E;%s\007" "$argv"
     end
