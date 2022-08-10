@@ -12,12 +12,12 @@ function __vsc_initialize -e fish_prompt
         # https://fishshell.com/docs/current/interactive.html#searchable-command-history
         string match -q -- " *" $argv && return
 
-        printf "\e]633;C\007"
-        printf "\e]633;E;%s\007" "$argv"
+        printf "\e]633;C\a"
+        printf "\e]633;E;%s\a" "$argv"
     end
 
     function __vsc_command_complete -e fish_postexec
-        printf "\e]633;D;%s\007" $status
+        printf "\e]633;D;%s\a" $status
         __vsc_update_cwd
     end
 
