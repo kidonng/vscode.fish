@@ -8,12 +8,12 @@ function __vsc_initialize -e fish_prompt
     functions -e __vsc_initialize
 
     function __vsc_command_output_start -e fish_preexec
-        printf "\033]633;C\007"
-        printf "\033]633;E;%s\007" "$argv"
+        printf "\e]633;C\007"
+        printf "\e]633;E;%s\007" "$argv"
     end
 
     function __vsc_command_complete -e fish_postexec
-        printf "\033]633;D;%s\007" $status
+        printf "\e]633;D;%s\007" $status
         __vsc_update_cwd
     end
 
