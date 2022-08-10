@@ -14,7 +14,11 @@ function __vsc_initialize -e fish_prompt
         end
 
         printf "\e]633;C\a"
-        printf "\e]633;E;$argv\a"
+        printf "\e]633;E;%s\a" (
+            string replace -a -- "\\" "\\\\" $argv |
+            string replace -a ";" "\x3b" |
+            string join "\x0a"
+        )
     end
 
     function __vsc_command_complete -e fish_postexec
