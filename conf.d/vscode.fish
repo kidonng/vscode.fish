@@ -28,14 +28,4 @@ function __vsc_initialize -e fish_prompt
         __vsc_fish_prompt
         __vsc_prompt_end
     end
-
-    if functions -q fish_right_prompt
-        functions -c fish_right_prompt __vsc_fish_right_prompt
-
-        function fish_right_prompt
-            __vsc_right_prompt_start
-            __vsc_fish_right_prompt
-            __vsc_right_prompt_end
-        end
-    end
 end

@@ -12,7 +12,6 @@ Differences from [experimental fish integration in latest VSCode Insiders](https
 
 - Automatic injection\*
 - Ignore commands with leading spaces, [just like fish](https://fishshell.com/docs/current/interactive.html#searchable-command-history)
-- Support right prompt
 
 \* [Does not work with async prompts](https://github.com/kidonng/vscode.fish/issues/1) like [Tide](https://github.com/IlanCosman/tide) or [Hydro](https://github.com/jorgebucaran/hydro) yet
 
